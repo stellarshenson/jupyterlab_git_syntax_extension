@@ -52,46 +52,11 @@ const plugin: JupyterFrontEndPlugin<void> = {
       support: new LanguageSupport(StreamLanguage.define(gitattributesMode))
     });
 
-    // Register file types in document registry
-    app.docRegistry.addFileType({
-      name: 'gitignore',
-      displayName: 'Gitignore',
-      mimeTypes: ['text/x-gitignore'],
-      extensions: ['.gitignore'],
-      pattern: '^\\.gitignore$',
-      fileFormat: 'text' as const,
-      contentType: 'file' as const
-    });
-
-    app.docRegistry.addFileType({
-      name: 'gitconfig',
-      displayName: 'Git Config',
-      mimeTypes: ['text/x-gitconfig'],
-      extensions: ['.gitconfig'],
-      pattern: '^\\.gitconfig$',
-      fileFormat: 'text' as const,
-      contentType: 'file' as const
-    });
-
-    app.docRegistry.addFileType({
-      name: 'gitmodules',
-      displayName: 'Git Modules',
-      mimeTypes: ['text/x-gitconfig'],
-      extensions: ['.gitmodules'],
-      pattern: '^\\.gitmodules$',
-      fileFormat: 'text' as const,
-      contentType: 'file' as const
-    });
-
-    app.docRegistry.addFileType({
-      name: 'gitattributes',
-      displayName: 'Git Attributes',
-      mimeTypes: ['text/x-gitattributes'],
-      extensions: ['.gitattributes'],
-      pattern: '^\\.gitattributes$',
-      fileFormat: 'text' as const,
-      contentType: 'file' as const
-    });
+    // NOTE: Do not register file types via app.docRegistry.addFileType().
+    // File type registration sets icons, and would override icons provided
+    // by jupyterlab_vscode_icons_extension. Language registration above is
+    // sufficient for syntax highlighting - it binds MIME types, extensions,
+    // and filename patterns to the CodeMirror parsers.
   }
 };
 

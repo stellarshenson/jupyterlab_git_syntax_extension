@@ -1,6 +1,6 @@
 {
     "name": "jupyterlab_git_syntax_extension",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Jupyterlab extension to add syntax highlighting to various git files such as gitmodules, gitignore etc",
     "keywords": [
         "jupyter",
@@ -58,8 +58,7 @@
     "dependencies": {
         "@codemirror/language": "^6.0.0",
         "@jupyterlab/application": "^4.0.0",
-        "@jupyterlab/codemirror": "^4.0.0",
-        "@jupyterlab/ui-components": "^4.0.0"
+        "@jupyterlab/codemirror": "^4.0.0"
     },
     "devDependencies": {
         "@jupyterlab/builder": "^4.0.0",

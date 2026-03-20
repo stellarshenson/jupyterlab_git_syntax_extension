@@ -2,6 +2,14 @@ import { gitignoreMode } from '../gitignore-mode';
 import { gitconfigMode } from '../gitconfig-mode';
 import { gitattributesMode } from '../gitattributes-mode';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+declare const require: any;
+declare const __dirname: string;
+/* eslint-enable @typescript-eslint/no-explicit-any */
+
+const fs: { readFileSync: (p: string, enc: string) => string } = require('fs');
+const path: { resolve: (...p: string[]) => string } = require('path');
+
 /**
  * Minimal StringStream mock for testing StreamParser token() methods.
  */
@@ -289,5 +297,20 @@ describe('gitattributes parser', () => {
       '[attr]binary -diff -merge -text'
     );
     expect(tokens[0]).toEqual(['keyword', '[attr]']);
+  });
+});
+
+describe('icon override prevention', () => {
+  it('should not call docRegistry.addFileType in index.ts', () => {
+    const indexSource = fs.readFileSync(
+      path.resolve(__dirname, '..', 'index.ts'),
+      'utf-8'
+    );
+    // Strip comments before checking - we only care about actual code calls.
+    // docRegistry.addFileType() overrides icons set by other extensions
+    // (e.g. jupyterlab_vscode_icons_extension). This extension must only
+    // register languages via IEditorLanguageRegistry, not file types.
+    const codeOnly = indexSource.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+    expect(codeOnly).not.toMatch(/addFileType\s*\(/);
   });
 });

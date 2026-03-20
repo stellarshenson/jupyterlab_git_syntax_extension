@@ -15,10 +15,19 @@ Syntax highlighting for git configuration files in JupyterLab. Open `.gitignore`
 
 ## Features
 
-- **Syntax highlighting for git files** - `.gitignore`, `.gitmodules`, `.gitattributes`, `.gitconfig`, `.gitmessage`
-- **Automatic file type detection** - Git files are recognized and highlighted when opened
-- **CodeMirror integration** - Uses JupyterLab's built-in CodeMirror editor for consistent highlighting
-- **No configuration required** - Works out of the box after installation
+- **Gitignore highlighting** - comments, negation patterns (`!`), glob wildcards (`*`, `**`, `?`), character classes (`[...]`), path separators
+- **Gitconfig / Gitmodules highlighting** - INI-style section headers (`[remote "origin"]`), key-value pairs, booleans (`true`/`false`/`yes`/`no`/`on`/`off`), numbers with size suffixes, comments (`#`, `;`), continuation lines
+- **Gitattributes highlighting** - file patterns, macro definitions (`[attr]`), set/unset/unspecify attributes, attribute values
+- **Automatic file detection** - files matched by name (`.gitignore`, `.gitconfig`, `.gitmodules`, `.gitattributes`) and extension
+- **Icon-safe** - registers only language support, does not override file type icons set by other extensions (e.g. [jupyterlab_vscode_icons_extension](https://github.com/stellarshenson/jupyterlab_vscode_icons_extension))
+
+## Supported Files
+
+| Language | Files | MIME Type |
+|----------|-------|-----------|
+| Gitignore | `.gitignore` | `text/x-gitignore` |
+| Git Config | `.gitconfig`, `.gitmodules`, `config` | `text/x-gitconfig` |
+| Git Attributes | `.gitattributes` | `text/x-gitattributes` |
 
 ## Requirements
 
