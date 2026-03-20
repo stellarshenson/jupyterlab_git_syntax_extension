@@ -13,6 +13,8 @@
 
 Syntax highlighting for git configuration files in JupyterLab. Open `.gitignore`, `.gitmodules`, `.gitattributes`, `.gitconfig` and other git files with proper syntax colouring instead of plain text.
 
+![Gitignore syntax highlighting in JupyterLab](.resources/gitignore-syntax-highlighting.png)
+
 ## Features
 
 - **Gitignore highlighting** - comments, negation patterns (`!`), glob wildcards (`*`, `**`, `?`), character classes (`[...]`), path separators

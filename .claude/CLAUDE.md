@@ -9,6 +9,13 @@ The workspace `/home/lab/workspace/.claude/` directory contains additional instr
 (MERMAID.md, NOTEBOOK.md, DATASCIENCE.md, GIT.md, and others) referenced by CLAUDE.md.
 Consult workspace CLAUDE.md and the .claude directory to discover all applicable standards.
 
+## Required Workspace Skills
+
+Skills are located in `/home/lab/workspace/.claude/skills/`. The following skills MUST be used for this project:
+
+- **`jupyterlab-extension`** - JupyterLab extension development guidelines, CI/CD workflows, common caveats, TypeScript compatibility, syntax highlighting patterns
+- **`playwright`** - browser automation for taking screenshots, UI testing, and visual verification of the extension in JupyterLab
+
 ## Mandatory Bans (Reinforced)
 
 The following workspace rules are STRICTLY ENFORCED for this project:
