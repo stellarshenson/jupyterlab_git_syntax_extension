@@ -18,9 +18,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
   autoStart: true,
   requires: [IEditorLanguageRegistry],
   activate: (app: JupyterFrontEnd, languages: IEditorLanguageRegistry) => {
-    console.log(
-      '[jupyterlab_git_syntax_extension] Extension activated!'
-    );
+    console.log('[jupyterlab_git_syntax_extension] Extension activated!');
 
     // Register gitignore language
     languages.addLanguage({

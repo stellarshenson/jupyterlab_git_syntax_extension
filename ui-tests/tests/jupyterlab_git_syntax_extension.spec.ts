@@ -17,8 +17,7 @@ test('should emit an activation console message', async ({ page }) => {
 
   expect(
     logs.filter(
-      s =>
-        s === '[jupyterlab_git_syntax_extension] Extension activated!'
+      s => s === '[jupyterlab_git_syntax_extension] Extension activated!'
     )
   ).toHaveLength(1);
 });

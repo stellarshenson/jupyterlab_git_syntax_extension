@@ -23,11 +23,11 @@ Syntax highlighting for git configuration files in JupyterLab. Open `.gitignore`
 
 ## Supported Files
 
-| Language | Files | MIME Type |
-|----------|-------|-----------|
-| Gitignore | `.gitignore` | `text/x-gitignore` |
-| Git Config | `.gitconfig`, `.gitmodules`, `config` | `text/x-gitconfig` |
-| Git Attributes | `.gitattributes` | `text/x-gitattributes` |
+| Language       | Files                                 | MIME Type              |
+| -------------- | ------------------------------------- | ---------------------- |
+| Gitignore      | `.gitignore`                          | `text/x-gitignore`     |
+| Git Config     | `.gitconfig`, `.gitmodules`, `config` | `text/x-gitconfig`     |
+| Git Attributes | `.gitattributes`                      | `text/x-gitattributes` |
 
 ## Requirements
 

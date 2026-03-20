@@ -1,13 +1,6 @@
 import { StreamParser } from '@codemirror/language';
 
-const BOOLEAN_VALUES = new Set([
-  'true',
-  'false',
-  'yes',
-  'no',
-  'on',
-  'off'
-]);
+const BOOLEAN_VALUES = new Set(['true', 'false', 'yes', 'no', 'on', 'off']);
 
 interface IGitconfigState {
   inSectionHeader: boolean;

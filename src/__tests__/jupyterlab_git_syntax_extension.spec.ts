@@ -201,11 +201,7 @@ describe('gitconfig parser', () => {
   });
 
   it('should tokenize section with subsection', () => {
-    const tokens = tokenizeLine(
-      gitconfigMode,
-      state,
-      '[remote "origin"]'
-    );
+    const tokens = tokenizeLine(gitconfigMode, state, '[remote "origin"]');
     expect(tokens[0]).toEqual(['bracket', '[']);
     expect(tokens[1]).toEqual(['keyword', 'remote']);
     // whitespace is consumed
@@ -277,11 +273,7 @@ describe('gitattributes parser', () => {
   });
 
   it('should tokenize attribute with value', () => {
-    const tokens = tokenizeLine(
-      gitattributesMode,
-      state,
-      '*.jpg filter=lfs'
-    );
+    const tokens = tokenizeLine(gitattributesMode, state, '*.jpg filter=lfs');
     expect(tokens[0]).toEqual(['string', '*.jpg']);
     // Should have string token for value part (filter=lfs)
     const hasString = tokens.some(
@@ -310,7 +302,9 @@ describe('icon override prevention', () => {
     // docRegistry.addFileType() overrides icons set by other extensions
     // (e.g. jupyterlab_vscode_icons_extension). This extension must only
     // register languages via IEditorLanguageRegistry, not file types.
-    const codeOnly = indexSource.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '');
+    const codeOnly = indexSource
+      .replace(/\/\/.*$/gm, '')
+      .replace(/\/\*[\s\S]*?\*\//g, '');
     expect(codeOnly).not.toMatch(/addFileType\s*\(/);
   });
 });
