@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="20" failures="0" errors="0" time="1.885">
+  <testsuite name="gitignore parser" errors="0" failures="0" skipped="0" timestamp="2026-03-20T07:29:41" time="1.26" tests="20">
+    <testcase classname="gitignore parser should tokenize comments" name="gitignore parser should tokenize comments" time="0.001">
+    </testcase>
+    <testcase classname="gitignore parser should tokenize negation prefix" name="gitignore parser should tokenize negation prefix" time="0">
+    </testcase>
+    <testcase classname="gitignore parser should tokenize glob patterns" name="gitignore parser should tokenize glob patterns" time="0.001">
+    </testcase>
+    <testcase classname="gitignore parser should tokenize character classes" name="gitignore parser should tokenize character classes" time="0">
+    </testcase>
+    <testcase classname="gitignore parser should tokenize plain patterns" name="gitignore parser should tokenize plain patterns" time="0.001">
+    </testcase>
+    <testcase classname="gitignore parser should tokenize escaped characters" name="gitignore parser should tokenize escaped characters" time="0">
+    </testcase>
+    <testcase classname="gitignore parser should tokenize path separator" name="gitignore parser should tokenize path separator" time="0">
+    </testcase>
+    <testcase classname="gitconfig parser should tokenize section headers" name="gitconfig parser should tokenize section headers" time="0.001">
+    </testcase>
+    <testcase classname="gitconfig parser should tokenize section with subsection" name="gitconfig parser should tokenize section with subsection" time="0">
+    </testcase>
+    <testcase classname="gitconfig parser should tokenize comments with #" name="gitconfig parser should tokenize comments with #" time="0">
+    </testcase>
+    <testcase classname="gitconfig parser should tokenize comments with ;" name="gitconfig parser should tokenize comments with ;" time="0.001">
+    </testcase>
+    <testcase classname="gitconfig parser should tokenize key = value" name="gitconfig parser should tokenize key = value" time="0">
+    </testcase>
+    <testcase classname="gitconfig parser should tokenize boolean values" name="gitconfig parser should tokenize boolean values" time="0">
+    </testcase>
+    <testcase classname="gitconfig parser should tokenize numeric values" name="gitconfig parser should tokenize numeric values" time="0">
+    </testcase>
+    <testcase classname="gitattributes parser should tokenize comments" name="gitattributes parser should tokenize comments" time="0.001">
+    </testcase>
+    <testcase classname="gitattributes parser should tokenize pattern and set attribute" name="gitattributes parser should tokenize pattern and set attribute" time="0">
+    </testcase>
+    <testcase classname="gitattributes parser should tokenize unset attribute with -" name="gitattributes parser should tokenize unset attribute with -" time="0">
+    </testcase>
+    <testcase classname="gitattributes parser should tokenize attribute with value" name="gitattributes parser should tokenize attribute with value" time="0">
+    </testcase>
+    <testcase classname="gitattributes parser should tokenize macro definitions" name="gitattributes parser should tokenize macro definitions" time="0.001">
+    </testcase>
+    <testcase classname="icon override prevention should not call docRegistry.addFileType in index.ts" name="icon override prevention should not call docRegistry.addFileType in index.ts" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
