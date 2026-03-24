@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="20" failures="0" errors="0" time="1.885">
-  <testsuite name="gitignore parser" errors="0" failures="0" skipped="0" timestamp="2026-03-20T07:29:41" time="1.26" tests="20">
-    <testcase classname="gitignore parser should tokenize comments" name="gitignore parser should tokenize comments" time="0.001">
+<testsuites name="jest tests" tests="22" failures="0" errors="0" time="1.95">
+  <testsuite name="gitignore parser" errors="0" failures="0" skipped="0" timestamp="2026-03-24T03:06:38" time="1.396" tests="22">
+    <testcase classname="gitignore parser should tokenize comments" name="gitignore parser should tokenize comments" time="0.002">
     </testcase>
-    <testcase classname="gitignore parser should tokenize negation prefix" name="gitignore parser should tokenize negation prefix" time="0">
+    <testcase classname="gitignore parser should tokenize negation prefix" name="gitignore parser should tokenize negation prefix" time="0.001">
     </testcase>
     <testcase classname="gitignore parser should tokenize glob patterns" name="gitignore parser should tokenize glob patterns" time="0.001">
     </testcase>
@@ -21,25 +21,29 @@
     </testcase>
     <testcase classname="gitconfig parser should tokenize comments with #" name="gitconfig parser should tokenize comments with #" time="0">
     </testcase>
-    <testcase classname="gitconfig parser should tokenize comments with ;" name="gitconfig parser should tokenize comments with ;" time="0.001">
+    <testcase classname="gitconfig parser should tokenize comments with ;" name="gitconfig parser should tokenize comments with ;" time="0">
     </testcase>
     <testcase classname="gitconfig parser should tokenize key = value" name="gitconfig parser should tokenize key = value" time="0">
     </testcase>
-    <testcase classname="gitconfig parser should tokenize boolean values" name="gitconfig parser should tokenize boolean values" time="0">
+    <testcase classname="gitconfig parser should tokenize boolean values" name="gitconfig parser should tokenize boolean values" time="0.001">
     </testcase>
     <testcase classname="gitconfig parser should tokenize numeric values" name="gitconfig parser should tokenize numeric values" time="0">
     </testcase>
-    <testcase classname="gitattributes parser should tokenize comments" name="gitattributes parser should tokenize comments" time="0.001">
+    <testcase classname="gitconfig parser should not highlight &quot;on&quot; inside words like &quot;extension&quot;" name="gitconfig parser should not highlight &quot;on&quot; inside words like &quot;extension&quot;" time="0">
+    </testcase>
+    <testcase classname="gitconfig parser should not highlight port numbers in URLs" name="gitconfig parser should not highlight port numbers in URLs" time="0.001">
+    </testcase>
+    <testcase classname="gitattributes parser should tokenize comments" name="gitattributes parser should tokenize comments" time="0">
     </testcase>
     <testcase classname="gitattributes parser should tokenize pattern and set attribute" name="gitattributes parser should tokenize pattern and set attribute" time="0">
     </testcase>
-    <testcase classname="gitattributes parser should tokenize unset attribute with -" name="gitattributes parser should tokenize unset attribute with -" time="0">
+    <testcase classname="gitattributes parser should tokenize unset attribute with -" name="gitattributes parser should tokenize unset attribute with -" time="0.001">
     </testcase>
     <testcase classname="gitattributes parser should tokenize attribute with value" name="gitattributes parser should tokenize attribute with value" time="0">
     </testcase>
-    <testcase classname="gitattributes parser should tokenize macro definitions" name="gitattributes parser should tokenize macro definitions" time="0.001">
+    <testcase classname="gitattributes parser should tokenize macro definitions" name="gitattributes parser should tokenize macro definitions" time="0">
     </testcase>
-    <testcase classname="icon override prevention should not call docRegistry.addFileType in index.ts" name="icon override prevention should not call docRegistry.addFileType in index.ts" time="0">
+    <testcase classname="icon override prevention should not call docRegistry.addFileType in index.ts" name="icon override prevention should not call docRegistry.addFileType in index.ts" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
