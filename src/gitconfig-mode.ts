@@ -1,7 +1,5 @@
 import { StreamParser } from '@codemirror/language';
 
-const BOOLEAN_VALUES = new Set(['true', 'false', 'yes', 'no', 'on', 'off']);
-
 interface IGitconfigState {
   inSectionHeader: boolean;
   inValue: boolean;
@@ -118,16 +116,23 @@ export const gitconfigMode: StreamParser<IGitconfigState> = {
         }
       }
 
-      // Boolean values
-      if (stream.match(/\b(true|false|yes|no|on|off)\b/i)) {
-        const word = stream.current().trim().toLowerCase();
-        if (BOOLEAN_VALUES.has(word)) {
+      // Boolean values - only match as standalone words, not mid-word.
+      // We check that the next characters form a complete boolean word
+      // followed by a non-word character (or EOL). The stream.match()
+      // only looks forward, so we also guard against mid-word position
+      // by requiring the previous character (if any) to be non-alphanumeric.
+      if (
+        stream.match(/(true|false|yes|no|on|off)(?=[^a-zA-Z0-9_-]|$)/i, false)
+      ) {
+        const before = stream.string.charAt(stream.pos - 1);
+        if (stream.pos === 0 || !/[a-zA-Z0-9_-]/.test(before)) {
+          stream.match(/(true|false|yes|no|on|off)/i);
           return 'atom';
         }
       }
 
-      // Integer values with optional suffix
-      if (stream.match(/\d+[kKmMgG]?\b/)) {
+      // Integer values with optional suffix - same standalone guard
+      if (stream.match(/\d+[kKmMgG]?(?=[^a-zA-Z0-9_-]|$)/)) {
         return 'number';
       }
 
@@ -137,7 +142,12 @@ export const gitconfigMode: StreamParser<IGitconfigState> = {
         return 'string';
       }
 
-      // Unquoted value text
+      // Unquoted value text - consume word characters as a chunk.
+      // Includes : for URLs (e.g. https://host:8443/path) and
+      // @ for email/git addresses (e.g. git@host)
+      if (stream.match(/[a-zA-Z0-9_./:@~-]+/)) {
+        return 'string';
+      }
       stream.next();
       return 'string';
     }

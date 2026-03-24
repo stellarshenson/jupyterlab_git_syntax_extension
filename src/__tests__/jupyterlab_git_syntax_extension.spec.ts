@@ -18,9 +18,11 @@ class MockStringStream {
   private start: number;
   private lineStart: boolean;
   private str: string;
+  public string: string;
 
   constructor(line: string, isFirstLine = true) {
     this.str = line;
+    this.string = line;
     this.pos = 0;
     this.start = 0;
     this.lineStart = isFirstLine;
@@ -242,6 +244,31 @@ describe('gitconfig parser', () => {
     );
     const numToken = tokens.find(([tok]) => tok === 'number');
     expect(numToken).toBeDefined();
+  });
+
+  it('should not highlight "on" inside words like "extension"', () => {
+    // First consume key = to enter value state
+    tokenizeLine(gitconfigMode, state, '\tpath = x', false);
+    state.inValue = true;
+    const tokens = tokenizeLine(
+      gitconfigMode,
+      state,
+      '\tpath = private/jupyterlab/jupyterlab_mmd_to_png_extension',
+      false
+    );
+    const atomTokens = tokens.filter(([tok]) => tok === 'atom');
+    expect(atomTokens).toHaveLength(0);
+  });
+
+  it('should not highlight port numbers in URLs', () => {
+    const tokens = tokenizeLine(
+      gitconfigMode,
+      state,
+      '\turl = https://gitlab.srv.stellars-tech.eu:8443/konrad.jelen/repo.git',
+      false
+    );
+    const numTokens = tokens.filter(([tok]) => tok === 'number');
+    expect(numTokens).toHaveLength(0);
   });
 });
 
