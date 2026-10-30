@@ -33,7 +33,7 @@ Syntax highlighting for git configuration files in JupyterLab. Open `.gitignore`
 
 ## Requirements
 
-- JupyterLab >= 4.0.0
+- JupyterLab >= 4.6.0
 
 ## Install
 

@@ -4,3 +4,7 @@ node_modules
 **/package.json
 !/package.json
 jupyterlab_git_syntax_extension
+eslint.config.mjs
+.venv
+.claude
+.agents
