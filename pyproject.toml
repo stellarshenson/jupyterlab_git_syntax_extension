@@ -43,8 +43,8 @@ artifacts = ["jupyterlab_git_syntax_extension/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupyterlab_git_syntax_extension/labextension" = "share/jupyter/labextensions/jupyterlab_git_syntax_extension"
-"install.json" = "share/jupyter/labextensions/jupyterlab_git_syntax_extension/install.json"
+"jupyterlab_git_syntax_extension/labextension" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-git-syntax-extension"
+"install.json" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-git-syntax-extension/install.json"
 
 [tool.hatch.build.hooks.version]
 path = "jupyterlab_git_syntax_extension/_version.py"

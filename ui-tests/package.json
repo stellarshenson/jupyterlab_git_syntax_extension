@@ -1,7 +1,7 @@
 {
-  "name": "jupyterlab_git_syntax_extension-ui-tests",
+  "name": "@stellarshenson/jupyterlab-git-syntax-extension-ui-tests",
   "version": "1.0.0",
-  "description": "JupyterLab jupyterlab_git_syntax_extension Integration Tests",
+  "description": "JupyterLab @stellarshenson/jupyterlab-git-syntax-extension Integration Tests",
   "private": true,
   "scripts": {
     "start": "jupyter lab --config jupyter_server_test_config.py",

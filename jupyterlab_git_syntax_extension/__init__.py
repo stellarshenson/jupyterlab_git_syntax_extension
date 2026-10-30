@@ -12,5 +12,5 @@ except ImportError:
 def _jupyter_labextension_paths():
     return [{
         "src": "labextension",
-        "dest": "jupyterlab_git_syntax_extension"
+        "dest": "@stellarshenson/jupyterlab-git-syntax-extension"
     }]

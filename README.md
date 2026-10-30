@@ -1,7 +1,7 @@
 # jupyterlab_git_syntax_extension
 
 [![GitHub Actions](https://github.com/stellarshenson/jupyterlab_git_syntax_extension/actions/workflows/build.yml/badge.svg)](https://github.com/stellarshenson/jupyterlab_git_syntax_extension/actions/workflows/build.yml)
-[![npm version](https://img.shields.io/npm/v/jupyterlab_git_syntax_extension.svg)](https://www.npmjs.com/package/jupyterlab_git_syntax_extension)
+[![npm version](https://img.shields.io/npm/v/@stellarshenson/jupyterlab-git-syntax-extension.svg)](https://www.npmjs.com/package/@stellarshenson/jupyterlab-git-syntax-extension)
 [![PyPI version](https://img.shields.io/pypi/v/jupyterlab-git-syntax-extension.svg)](https://pypi.org/project/jupyterlab-git-syntax-extension/)
 [![Total PyPI downloads](https://static.pepy.tech/badge/jupyterlab-git-syntax-extension)](https://pepy.tech/project/jupyterlab-git-syntax-extension)
 [![JupyterLab 4](https://img.shields.io/badge/JupyterLab-4-orange.svg)](https://jupyterlab.readthedocs.io/en/stable/)

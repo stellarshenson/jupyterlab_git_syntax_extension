@@ -1,8 +1,7 @@
 import { StreamParser } from '@codemirror/language';
 
-interface IGitignoreState {
-  /* line-oriented format, no cross-line state needed */
-}
+// line-oriented format, no cross-line state needed
+type IGitignoreState = Record<string, never>;
 
 export const gitignoreMode: StreamParser<IGitignoreState> = {
   name: 'gitignore',

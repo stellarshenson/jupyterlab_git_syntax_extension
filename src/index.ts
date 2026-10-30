@@ -9,10 +9,10 @@ import { gitconfigMode } from './gitconfig-mode';
 import { gitattributesMode } from './gitattributes-mode';
 
 /**
- * Initialization data for the jupyterlab_git_syntax_extension extension.
+ * Initialization data for the @stellarshenson/jupyterlab-git-syntax-extension extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyterlab_git_syntax_extension:plugin',
+  id: '@stellarshenson/jupyterlab-git-syntax-extension:plugin',
   description:
     'Jupyterlab extension to add syntax highlighting to various git files such as gitmodules, gitignore etc',
   autoStart: true,
