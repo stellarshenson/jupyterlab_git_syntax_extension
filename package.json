@@ -1,6 +1,6 @@
 {
     "name": "@stellarshenson/jupyterlab-git-syntax-extension",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "Jupyterlab extension to add syntax highlighting to various git files such as gitmodules, gitignore etc",
     "keywords": [
         "jupyter",
