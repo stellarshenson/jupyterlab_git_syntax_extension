@@ -30,7 +30,7 @@ The following workspace rules are STRICTLY ENFORCED for this project:
 
 JupyterLab extension that adds syntax highlighting to git configuration files (.gitignore, .gitmodules, .gitattributes, .gitconfig, etc.) within the JupyterLab editor. Built with TypeScript frontend, Python packaging via hatchling, and the standard JupyterLab extension toolchain (jlpm, jupyter-builder).
 
-- **npm package**: `jupyterlab_git_syntax_extension`
+- **npm package**: `@stellarshenson/jupyterlab-git-syntax-extension`
 - **PyPI package**: `jupyterlab-git-syntax-extension`
 - **GitHub owner**: `stellarshenson`
 - **JupyterLab**: 4.x

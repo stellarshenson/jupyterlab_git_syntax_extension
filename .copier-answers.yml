@@ -12,6 +12,6 @@ labextension_name: '@stellarshenson/jupyterlab-git-syntax-extension'
 project_short_description: Jupyterlab extension to add syntax highlighting to various
     git files such as gitmodules, gitignore etc
 python_name: jupyterlab_git_syntax_extension
-repository: ''
+repository: https://github.com/stellarshenson/jupyterlab_git_syntax_extension
 test: true
 
