@@ -34,7 +34,7 @@ JupyterLab extension that adds syntax highlighting to git configuration files (.
 - **PyPI package**: `jupyterlab-git-syntax-extension`
 - **GitHub owner**: `stellarshenson`
 - **JupyterLab**: 4.x
-- **Python**: >= 3.10
+- **Python**: >= 3.12
 
 ## Makefile Version Synchronization
 
