@@ -2,6 +2,19 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## [1.0.17] - 2026-11-13
+
+### Changed
+
+- Leave the pm-tools trackers out of the prettier check
+- Prove file detection of the git languages by file name
+- Ignore the PayPal donate link in the link check
+
+### Fixed
+
+- Keep the gitattributes parser advancing on a line that starts with whitespace
+- Keep the gitconfig parser advancing and colour comments after a value
+
 ## [1.0.13] - 2026-10-31
 
 ### Changed
