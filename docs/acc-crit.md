@@ -57,10 +57,13 @@ Language registration in JupyterLab
 
 - log: 2026-11-13T07:00:13Z @kj category created
 
-- [ ] `ACC-REG-5-DETECT` **Automatic file detection** - HIGH; .gitignore, .gitconfig, .gitmodules, config and .gitattributes open with their language by file name and extension
-  - test: open each file in JupyterLab, read the language in the status bar
-  - test-tags: MANUAL
+- [x] `ACC-REG-5-DETECT` **Automatic file detection** - HIGH; .gitignore, .gitconfig, .gitmodules, config and .gitattributes open with their language by file name and extension
+  - evidence: build_test.py at 1.0.16: Jest 31 green, src/__tests__/detect.spec.ts activates the plugin on the real EditorLanguageRegistry and findByFileName returns the language for each of the 5 file names
+  - test: jlpm test, describe automatic file detection
+  - test-tags: UNIT
   - log: 2026-11-13T07:00:13Z @kj added
+  - log: 2026-11-13T09:18:35Z @kj closed
+  - log: 2026-11-13T09:18:41Z @kj edited test "open each file in JupyterLab, read the language in the status bar" -> "jlpm test, describe automatic file detection"; test-tags "MANUAL" -> "UNIT"
 - [x] `ACC-REG-6-ICONS` **Icon-safe** - MEDIUM; the plugin registers languages only and never calls docRegistry.addFileType
   - evidence: build_test.py at 1.0.14: Jest 24 green, describe icon override prevention
   - test: jlpm test, describe icon override prevention
