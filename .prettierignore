@@ -9,3 +9,5 @@ eslint.config.mjs
 .claude
 .agents
 package-lock.json
+docs/acc-crit*.md
+docs/defects*.md
