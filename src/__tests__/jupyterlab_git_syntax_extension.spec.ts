@@ -260,6 +260,23 @@ describe('gitconfig parser', () => {
     expect(atomTokens).toHaveLength(0);
   });
 
+  it('should advance on a character a section name cannot hold', () => {
+    const stream: any = new MockStringStream('/b]', false);
+    state.inSectionHeader = true;
+    gitconfigMode.token(stream, state);
+    expect(stream.current()).toBe('/');
+  });
+
+  it('should tokenize a comment after a value', () => {
+    const tokens = tokenizeLine(
+      gitconfigMode,
+      state,
+      '\tname = John # note',
+      false
+    );
+    expect(tokens[tokens.length - 1]).toEqual(['comment', '# note']);
+  });
+
   it('should not highlight port numbers in URLs', () => {
     const tokens = tokenizeLine(
       gitconfigMode,

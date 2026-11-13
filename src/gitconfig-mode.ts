@@ -50,8 +50,10 @@ export const gitconfigMode: StreamParser<IGitconfigState> = {
         }
         return 'string';
       }
-      // Section name
-      stream.match(/[a-zA-Z0-9._-]+/);
+      // Section name; any other character is consumed so the stream always advances
+      if (!stream.match(/[a-zA-Z0-9._-]+/)) {
+        stream.next();
+      }
       return 'keyword';
     }
 
@@ -107,13 +109,10 @@ export const gitconfigMode: StreamParser<IGitconfigState> = {
         return 'string';
       }
 
-      // Inline comment in value context
-      if (stream.match(/\s+[#;]/, false)) {
-        stream.eatSpace();
-        if (stream.eat(/[#;]/)) {
-          stream.skipToEnd();
-          return 'comment';
-        }
+      // Inline comment: git starts one at an unquoted # or ; in a value
+      if (stream.eat(/[#;]/)) {
+        stream.skipToEnd();
+        return 'comment';
       }
 
       // Boolean values - only match as standalone words, not mid-word.
