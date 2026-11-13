@@ -334,6 +334,12 @@ describe('gitattributes parser', () => {
     );
     expect(tokens[0]).toEqual(['keyword', '[attr]']);
   });
+
+  it('should advance over leading whitespace', () => {
+    const stream: any = new MockStringStream('  *.txt text');
+    gitattributesMode.token(stream, state);
+    expect(stream.current()).toBe('  ');
+  });
 });
 
 describe('icon override prevention', () => {

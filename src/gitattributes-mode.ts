@@ -17,13 +17,13 @@ export const gitattributesMode: StreamParser<IGitattributesState> = {
       state.patternConsumed = false;
     }
 
-    // Skip whitespace (but not at sol when pattern not consumed)
-    if (state.patternConsumed && stream.eatSpace()) {
+    // Skip whitespace
+    if (stream.eatSpace()) {
       return null;
     }
 
     // Comments
-    if (stream.sol() && stream.peek() === '#') {
+    if (!state.patternConsumed && stream.peek() === '#') {
       stream.skipToEnd();
       return 'comment';
     }
@@ -36,7 +36,7 @@ export const gitattributesMode: StreamParser<IGitattributesState> = {
     // Pattern (first token on line)
     if (!state.patternConsumed) {
       // Macro definition: [attr]name
-      if (stream.sol() && stream.match(/\[attr\]/)) {
+      if (stream.match(/\[attr\]/)) {
         return 'keyword';
       }
       // Consume the pattern (non-whitespace)
